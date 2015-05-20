@@ -1,0 +1,20 @@
+title = "Account"
+url = "/"
+layout = "default"
+description = "Account Page"
+hidden = "0"
+
+[combo]
+password_recovery_page = "/password-recovery"
+redirect_login = "/dashboard"
+redirect_registration = "/dashboard"
+==
+<div class="jumbotron">
+    <div class="container">
+        <h1>Wordpress Account Page</h1>
+    </div>
+</div>
+
+<div class="container">
+    {% component 'combo' %}
+</div>
