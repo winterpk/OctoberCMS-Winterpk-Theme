@@ -3440,7 +3440,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .navbar-nav {
-    float: left;
+    float: right;
     margin: 0;
   }
   .navbar-nav > li {
@@ -4108,7 +4108,7 @@ a.thumbnail.active {
 }
 .alert {
   padding: 15px;
-  margin-bottom: 20px;
+  margin: 10px 0;
   border: 1px solid transparent;
   border-radius: 4px;
 }
@@ -4164,6 +4164,7 @@ a.thumbnail.active {
   border-color: #faebcc;
   color: #8a6d3b;
 }
+
 .alert-warning hr {
   border-top-color: #f7e1b5;
 }
@@ -4180,6 +4181,11 @@ a.thumbnail.active {
 }
 .alert-danger .alert-link {
   color: #843534;
+}
+.alert-error {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
 }
 @-webkit-keyframes progress-bar-stripes {
   from {

@@ -1,0 +1,21 @@
+title = "dashboard"
+url = "/dashboard"
+layout = "private"
+description = "User Dashboard"
+hidden = "0"
+
+[session]
+
+
+[contactbook]
+==
+<div class="jumbotron">
+    <div class="container">
+		<h1>Welcome to your dashboard {{ user.display_name }}</h1>
+    </div>
+</div>
+
+<div class="container">
+	<h2>Check out this contact book!</h2>
+    {% component 'contactbook' %}
+</div>

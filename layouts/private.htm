@@ -1,7 +1,8 @@
-description = "Default layout"
+description = "Private layout requires auth user"
 
 [session]
-security = "all"
+security = "user"
+redirect = "home"
 ==
 <!DOCTYPE html>
 <html>
@@ -24,6 +25,7 @@ security = "all"
         <header id="layout-header">
 
             <!-- Nav -->
+            
             <nav id="layout-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
@@ -36,6 +38,7 @@ security = "all"
                         <a class="navbar-brand" href="{{ 'home'|page }}">Winterpk</a>
                     </div>
                     <div class="collapse navbar-collapse navbar-main-collapse">
+                    	
                         <ul class="nav navbar-nav">
                         	{#
                         	<li class="{% if this.page.id == 'home' %}active{% endif %}"><a href="{{ 'home'|page }}">Basic concepts</a></li>
@@ -43,10 +46,11 @@ security = "all"
                             <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Plugin components</a></li>
                             #}
                             {% if user %}
-                            	<li class="{% if this.page.id == 'Dashboard' %}active{% endif %}"><a href="{{ 'dashboard'|page }}">Dashboard</a></li>
-                            	<li><a data-request-redirect="/" data-request="onLogout" href="#">Logout</a></li>
+                           		<li class="{% if this.page.id == 'dashboard' %}active{% endif %}"><a href="{{ 'dashboard'|page }}">Dashboard</a></li>
+                            	<li><a data-request-redirect="{{ 'home'|page }}" data-request="onLogout" href="#">Logout</a></li>
                             {% endif %}
                         </ul>
+                        
                     </div>
                 </div>
             </nav>
@@ -54,15 +58,14 @@ security = "all"
         
         <!-- Display Flash Message -->
 		{% flash %}
-			<div class="container">
-			    <div class="alert alert-{{ type }}">
-			        {{ message }}
-			        <button class="close icon-remove" type="button" aria-label="Close" data-dismiss="alert"></button>
-			    </div>
-			    
+		<div class="container">
+			<div class="alert alert-{{ type }}">
+				{{ message }}
+				<button class="close icon-remove" type="button" aria-label="Close" data-dismiss="alert"></button>
 		    </div>
+		</div>
 		{% endflash %}
-
+		
         <!-- Content -->
         <section id="layout-content">
             {% page %}

@@ -5,9 +5,11 @@ description = "Account Page"
 hidden = "0"
 
 [combo]
-password_recovery_page = "/password-recovery"
-redirect_login = "/dashboard"
-redirect_registration = "/dashboard"
+paramCode = "code"
+
+[session]
+security = "guest"
+redirect = "dashboard"
 ==
 <div class="jumbotron">
     <div class="container">
